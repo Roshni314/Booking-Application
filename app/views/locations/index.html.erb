@@ -1,0 +1,23 @@
+<h1>Location List</h1>
+<table class="index">
+    <thead>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Capacity</th>
+        <th>City</th>
+    </thead>
+    <tbody>
+    <% @locations.each do |f| %>
+        <tr>
+            <td><%= f.name %></td>
+            <td><%= f.address %></td>
+            <td><%= f.capacity %></td>
+            <td><%= f.city.name %></td>
+            <td><%= link_to "Destroy", location_path(f), 
+            data: { turbo_method: :delete, 
+            turbo_confirm: "Are you sure?" } %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+<%= link_to "Add", new_location_path %>
