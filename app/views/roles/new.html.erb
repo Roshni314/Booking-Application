@@ -1,0 +1,9 @@
+
+<%= form_with model: @role do |f| %>
+    <div>
+        <%= f.label :name %>
+        <%= f.select :name, [["Admin", "Admin"], ["User", "User"]] %>
+    </div><br>
+
+    <%= f.submit %>
+<% end %>

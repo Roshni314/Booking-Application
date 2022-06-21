@@ -1,0 +1,15 @@
+<h1>Role List</h1>
+<table class="index">
+    <thead>
+        <th>Name</th>
+    </thead>
+    <tbody>
+    <% @roles.each do |role| %>
+        <tr>
+            <td><%= role.name %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<%= link_to "Add", new_role_path %>
