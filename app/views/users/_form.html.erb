@@ -1,0 +1,21 @@
+
+<%= form_with model: @user do |f| %>
+    <div>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+    </div><br>
+    <div>
+        <%= f.label :Phone %>
+        <%= f.text_field :phone %>
+    </div><br>
+    <div>
+        <%= f.label :Email %>
+        <%= f.text_field :email %>
+    </div><br>
+    <div>
+        <%= f.label :role %>
+        <%= f.select :role, [["Admin", "Admin"], ["User", "User"]] %>
+    </div><br>
+
+    <%= f.submit %>
+<% end %>

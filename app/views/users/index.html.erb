@@ -1,0 +1,27 @@
+<h1>User List</h1>
+<table class="index">
+    <thead>
+        <th>Name</th>
+        <th>Phone Number</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Booking</th>
+        <th>Delete</th>
+    </thead>
+    <tbody>
+    <% @users.each do |user| %>
+        <tr>
+            <td><%= user.name %></td>
+            <td><%= user.phone %></td>
+            <td><%= user.email %></td>
+            <td><%= user.roles.first.name %></td>
+            <td><%= link_to "Booking", new_user_booking_path(user) %></td>
+            <td><%= link_to "Destroy", user_path(user), 
+            data: { turbo_method: :delete,  
+            turbo_confirm: "Are you sure?" } %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+<%= link_to "Add", new_user_path %>
+
