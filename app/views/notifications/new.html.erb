@@ -1,0 +1,19 @@
+
+<%= form_with model: @notification do |f| %>
+    <div>
+        <%= f.label :notifiable_type %>
+        <%= f.text_field :notifiable_type %>
+        <% end %>
+    </div><br>
+    <div>
+        <%= f.label :notifiable_id %>
+        <%= f.text_field :notifiable_id %>
+        <% end %>
+    </div><br>
+    <div>
+        <%= f.label :message %>
+        <%= f.text_field :message %>
+    </div><br>
+     
+    <%= f.submit %>
+<% end %>

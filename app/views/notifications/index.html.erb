@@ -1,0 +1,18 @@
+<h1>Notification List</h1>
+<table class="index">
+    <thead>
+        <th>Notifiable Type</th>
+        <th>Message</th>
+    </thead>
+    <tbody>
+    <% @notifications.each do |f| %>
+        <tr>
+            <td><%= f.notifiable_type %></td>
+            <td><%= f.message %></td>
+            <td><%= link_to "Destroy", notification_path(f), 
+            data: { turbo_method: :delete, 
+            turbo_confirm: "Are you sure?" } %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
