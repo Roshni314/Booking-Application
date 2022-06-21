@@ -1,0 +1,15 @@
+<h1>City List</h1>
+<table class="index">
+    <thead>
+        <th>Name</th> 
+    </thead>
+    <tbody>
+    <% @cities.each do |f| %>
+        <tr>
+            <td><%= f.name %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+<%= link_to "New City", new_city_path %>
+

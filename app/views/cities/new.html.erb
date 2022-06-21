@@ -1,0 +1,9 @@
+
+<%= form_with model: @city do |f| %>
+    <div>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+    </div>
+    <br>
+    <%= f.submit %>
+<% end %>
