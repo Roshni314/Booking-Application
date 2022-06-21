@@ -1,0 +1,21 @@
+
+<%= form_with model: @location do |f| %>
+    <div>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+    </div><br>
+    <div>
+        <%= f.label :address %>
+        <%= f.text_field :address %>
+    </div><br>
+    <div>
+        <%= f.label :capacity %>
+        <%= f.text_field :capacity %>
+    </div><br>
+    <div>
+    <%=f.label :city_id%>
+    <%= collection_select(:location, :city_id, City.all, :id, :name)%>
+    </div><br>
+
+    <%= f.submit %>
+<% end %>
