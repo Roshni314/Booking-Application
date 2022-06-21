@@ -1,0 +1,9 @@
+
+<%= form_with model: @category do |f| %>
+    <div>
+        <%= f.label :name %>
+        <%= f.select :name, [["Sports", "Sports"], ["Entertainment", "Entertainment"], ["Consert", "Consert"]] %>
+    </div><br>
+
+    <%= f.submit %>
+<% end %>
