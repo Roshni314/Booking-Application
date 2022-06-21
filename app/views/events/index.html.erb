@@ -1,0 +1,29 @@
+<h1>Event List</h1>
+<table class="index">
+    <thead>
+        <th>Event Name</th>
+        <th>Start Time</th>
+        <th>End Time</th>
+        <th>City</th>
+        <th>Location</th>
+        <th>Category</th>
+        <th>Seat Left</th>
+    </thead>
+    <tbody>
+    <% @events.each do |f| %>
+        <tr>
+            <td><%= f.name %></td>
+            <td><%= f.start_time %></td>
+            <td><%= f.end_time %></td>
+            <td><%= f.location.city.name %></td>
+            <td><%= f.location.name %></td>
+            <td><%= f.category.name %></td>
+            <td><%= f.location.capacity - f.bookings.sum(:capacity) %></td>
+            <td><%= link_to "Destroy", event_path(f), 
+            data: { turbo_method: :delete, 
+            turbo_confirm: "Are you sure?" } %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+<%= link_to "Add", new_event_path %>
