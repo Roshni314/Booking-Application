@@ -1,0 +1,21 @@
+<h2>Booking Index</h2>
+<table class="index">
+  <thead>
+    <th>User</th>
+    <th>Event</th>
+    <th>Capacity</th>
+    <th>Status</th>
+    <th>View</th>
+  </thead>
+  <tbody>
+    <% @bookings.each do |booking| %>
+      <tr>
+        <td><%= booking.user.name %></td>
+        <td><%= booking.event.name %></td>
+        <td><%= booking.capacity %></td>
+        <td><%= booking.status %></td>
+        <td><%= link_to "View", bookings_show_path(booking) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

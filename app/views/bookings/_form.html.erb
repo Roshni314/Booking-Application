@@ -1,0 +1,16 @@
+
+  <%= form_with model: [ @user, @user.bookings.build ] do |f| %>
+
+    <div>
+      <%=f.label :event_id %>
+      <%= collection_select(:booking, :event_id, Event.all, :id, :name)%>
+    </div>
+    <br>
+    <div>
+      <%=f.label :capacity %>
+      <%= f.text_field :capacity %>
+    </div>
+    <br>
+    <%= f.submit %>
+  <% end %>
+  
